@@ -1,8 +1,9 @@
-
+import os
 import interactions
 import crypto
 
-bot = interactions.Client(token="MTAyOTE2ODAzMDExMjAzMDgxMQ.Gy4tcT.Zs3CCKngmd2JUlSazVhMESt5H6xpX7OFP-Zt7k")
+#bot = interactions.Client(token="MTAyOTE2ODAzMDExMjAzMDgxMQ.Gy4tcT.Zs3CCKngmd2JUlSazVhMESt5H6xpX7OFP-Zt7k")
+bot = interactions.Client(os.getenv('DISCORD_BOT_KEY'))
 
 @bot.command(
     name="cryptograph",
