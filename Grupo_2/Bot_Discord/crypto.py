@@ -1,8 +1,7 @@
-from asyncio.windows_events import NULL
 from cryptography.fernet import Fernet
 
-def encrypt(TextInput, key = NULL):
-	if key == NULL:
+def encrypt(TextInput, key = None):
+	if key == None:
 		key = Fernet.generate_key()
 	f = Fernet(key)
 	token = f.encrypt(bytes(TextInput, encoding='utf8'))

@@ -1,2 +1,6 @@
 firebase_admin
 Flask
+crypto
+cryptography
+Fernet
+discord-py-interactions
