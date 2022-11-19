@@ -1,9 +1,10 @@
-
-from asyncio.windows_events import NULL
+import os
 import interactions
 import crypto
+from dotenv import load_dotenv
 
-bot = interactions.Client(token="MTAyOTE2ODAzMDExMjAzMDgxMQ.GS4XI6.Js4J_UUiJth_FOvIUCdB9DtXFCgU8WNC8NoRsc")
+load_dotenv()
+bot = interactions.Client(os.getenv('DISCORD_BOT_KEY'))
 
 @bot.command(
     name="cryptograph",
@@ -25,9 +26,10 @@ bot = interactions.Client(token="MTAyOTE2ODAzMDExMjAzMDgxMQ.GS4XI6.Js4J_UUiJth_F
     ],
 )
 
-async def EncryptCommand(ctx: interactions.CommandContext, text: str, Inputkey: str = NULL):
-	Result = crypto.encrypt(text, key=Inputkey)
-	await ctx.send(f"Your encrypted text is:\n `{Result[0]}` \n Your key is: \n`{Result[1]}`")
+async def EncryptCommand(ctx: interactions.CommandContext, text: str, Inputkey: str = None):
+    print(Inputkey)
+    Result = crypto.encrypt(text, key=Inputkey)
+    await ctx.send(f"Your encrypted text is:\n `{Result[0]}` \n Your key is: \n`{Result[1]}`")
 
 @bot.command(
     name="decryptograph",
