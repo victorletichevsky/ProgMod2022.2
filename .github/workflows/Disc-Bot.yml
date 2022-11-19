@@ -38,4 +38,4 @@ jobs:
       env:
         super_secret: ${{ secrets.DISCORD_BOT_KEY }}
       run: |
-        pytest Grupo_2/Bot_Discord/main.py
+        pytest Grupo_2/Bot_Discord/testCrypto.py

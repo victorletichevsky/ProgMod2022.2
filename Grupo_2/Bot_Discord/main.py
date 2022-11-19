@@ -1,8 +1,9 @@
 import os
 import interactions
 import crypto
+from dotenv import load_dotenv
 
-#bot = interactions.Client(token="MTAyOTE2ODAzMDExMjAzMDgxMQ.Gy4tcT.Zs3CCKngmd2JUlSazVhMESt5H6xpX7OFP-Zt7k")
+load_dotenv()
 bot = interactions.Client(os.getenv('DISCORD_BOT_KEY'))
 
 @bot.command(
@@ -26,8 +27,9 @@ bot = interactions.Client(os.getenv('DISCORD_BOT_KEY'))
 )
 
 async def EncryptCommand(ctx: interactions.CommandContext, text: str, Inputkey: str = None):
-	Result = crypto.encrypt(text, key=Inputkey)
-	await ctx.send(f"Your encrypted text is:\n `{Result[0]}` \n Your key is: \n`{Result[1]}`")
+    print(Inputkey)
+    Result = crypto.encrypt(text, key=Inputkey)
+    await ctx.send(f"Your encrypted text is:\n `{Result[0]}` \n Your key is: \n`{Result[1]}`")
 
 @bot.command(
     name="decryptograph",
