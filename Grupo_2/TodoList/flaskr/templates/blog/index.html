@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+    <style>
+        
+    .center {
+        margin: auto;
+        width: 50%;
+        color: green;
+        padding: 10px;
+      }
+    
+      body {
+        color: rgb(36, 106, 197);
+      }
+
+      .tab1 {
+        tab-size: 3;
+      }
+
+      </style>
+
+    <div class = "header">
+        <h1>
+            {% block title %}
+                Sua lista de tarefas
+            {% endblock %}
+        </h1>
+        
+        {% if g.user %}
+            <a class="action" href="{{ url_for('blog.create') }}">
+                Adicionar nova Tarefa
+            </a>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <article class="post">
+            <header>
+                <div>
+                   <font color="red"><h1>{{ post['title']}}</h1></font> 
+                </div>
+                    
+                {% if g.user['id'] == post['author_id'] %}
+                    <a class="action" href="{{ url_for('blog.update', id=post['id']) }}">
+                        Editar
+                    </a>
+                {% endif %}
+            </header> 
+        <br>
+            <p>     
+                <h3>       
+                    <b>
+                        <u>
+                            Data Inicio:
+                        </u>                    
+                    </b> 
+                </h3>
+                {{ post['created'].strftime('%Y-%m-%d') }}
+            </p>
+        <br>
+            <p>
+                <h3>
+                    <b>
+                        <u>
+                            Data Final:
+                        </u>
+                    </b>
+                        
+                </h3>     
+                {{ post['dateend'].strftime('%Y-%m-%d') }}
+            </p>
+            <br>
+            <p>
+                <h3>
+                    <b>
+                        <u>
+                            Prioridade:
+                        </u>
+                    </b>
+                       
+                </h3>     
+                {{ post['priority'] }}
+            </p>
+            <br>
+            <p>
+                <h3>
+                    <b>
+                        <u>
+                            Descrição:
+                        </u>
+                    </b>
+                       
+                </h3>     
+                <p class="body">{{ post['body'] }}</p>
+            
+
+        </article>
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
