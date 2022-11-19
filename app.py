@@ -10,6 +10,9 @@ temas_habilitados = ("todos", "Trabalho", "Meta", "Familia", "Faculdade")
 
 @app.route("/", methods=['GET'])
 def home():
+	"""
+	Usada para filtrar pelos temas pré definidos. Se o tema escolhido nâo existir nos pré definidos, são baixados todos os itens
+	"""
 	tema = request.args.get("tema")
 	if tema in temas_habilitados:
 		# se um tema correto foi passado, o usaremos para filtrar
@@ -32,6 +35,9 @@ def messageFilter():
 
 @app.route('/msg', methods=["POST"])
 def uploadMessage():
+	"""
+	
+	"""
 	if request.method == 'POST':
 		tema = request.form.get("tema")
 		msg = request.form.get("msg")
