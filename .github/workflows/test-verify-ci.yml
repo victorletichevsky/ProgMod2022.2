@@ -21,4 +21,4 @@ jobs:
         cache: 'pip'
     - run: pip install -r requirements.txt
     - name: Run service
-      run: pytest App/verify_test.py
+      run: pytest App/verify_tests.py
