@@ -10,18 +10,22 @@ import time
 import datetime
 from datetime import date,timedelta
 
+from .servicee.service import createMessage, getMessages
+
 bp = Blueprint('blog', __name__)
 
 
 @bp.route('/')
 def index():
+    createMessage('Jesus','Reze','Faculdade')
+    mensagem=getMessages('Faculdade')
     db = get_db()
     posts = db.execute(
         'SELECT p.id, title, body, created,  priority, dateend, author_id,username'
         ' FROM post p JOIN user u ON p.author_id =u.id'
         ' ORDER BY priority ASC'
     ).fetchall()
-    return render_template('blog/index.html', posts=posts)
+    return render_template('blog/index.html', posts=posts, message=mensagem)
 
 
 @bp.route('/create', methods=('GET', 'POST'))

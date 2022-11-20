@@ -42,6 +42,7 @@
             <header>
                 <div>
                    <font color="red"><h1>{{ post['title']}}</h1></font> 
+                   <h2>{{message[0].theme}}</h2>
                 </div>
                     
                 {% if g.user['id'] == post['author_id'] %}
