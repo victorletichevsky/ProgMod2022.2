@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-Widget Myapp() {
-  return const SizedBox(
-    height: 10,
-  );
-}
-
 void main() {
   testWidgets('MyApp smoke test', (WidgetTester tester) async {
     await tester.pumpWidget(Myapp());
@@ -109,4 +103,10 @@ void main() {
       );
     }
   });
+}
+
+Widget Myapp() {
+  return const SizedBox(
+    height: 10,
+  );
 }

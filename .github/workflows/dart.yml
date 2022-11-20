@@ -1,5 +1,5 @@
 # This is a basic workflow to help you get started with Actions
-name: FLUTTER PELO AMOR DE DEUS
+name: flutter test
 
 # Controls when the workflow will run
 on:
@@ -30,6 +30,9 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.3.8"
-      - run: flutter clean
-      - run: flutter pub get
-      - run: cd Grupo_2/login-app && flutter test
+      - name: Cleaning project
+        run: flutter clean
+      - name: Getting dependecies
+        run: flutter pub get
+      - name: Running tests
+        run: cd Grupo_2/login-app && flutter test
