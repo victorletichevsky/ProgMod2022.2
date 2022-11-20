@@ -24,6 +24,9 @@ def checkUsername(regex, username):
   # username digitado não atende aos requisitos da expressão regular, de modo mais generalizado
   if not padrao:
     return -4
+  #string vazia
+  if (len(username) == 0):
+    return False
   # username válido
   return 1
 

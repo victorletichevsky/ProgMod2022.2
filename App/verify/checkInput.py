@@ -23,6 +23,9 @@ def checkInput(string):
   if (len(selectMatches) != 0 ) or (len(deleteMatches) != 0) or (len(updateMatches) != 0):
     return False
   
+  if ( len(string) == 0 ):
+    return False
+  
   for comando in comandosProibidos:
     if (comando in string) or (comando.lower() in string):
       return False
