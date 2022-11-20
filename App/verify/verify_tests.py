@@ -1,5 +1,5 @@
-from checkUsername import *
-from checkInput import *
+from .checkUsername import *
+from .checkInput import *
 
 def test_input_ilegal_caractere():
   resultado_esperado = checkInput("""
