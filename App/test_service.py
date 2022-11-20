@@ -5,7 +5,7 @@ from firebase_admin import firestore
 messageTestRef = db.collection('messagesTest')
 
 def delete_collection(coll_ref, batch_size):
-    docs = coll_ref.list_documents(page_size=batch_size)
+    docs = coll_ref.list_documents(page_size = batch_size)
     deleted = 0
 
     for doc in docs:
