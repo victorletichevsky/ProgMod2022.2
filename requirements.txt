@@ -4,3 +4,4 @@ crypto
 cryptography
 Fernet
 discord-py-interactions
+coverage
