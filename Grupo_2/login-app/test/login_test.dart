@@ -4,9 +4,7 @@ import 'package:login_app/main.dart';
 
 void main() {
   testWidgets('MyApp smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(SizedBox(
-      height: 10,
-    ));
+    await tester.pumpWidget(Myapp());
     // Add tests here!
     void test() {}
 
