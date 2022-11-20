@@ -33,4 +33,3 @@ jobs:
       - run: flutter clean
       - run: flutter pub get
       - run: cd Grupo_2/login-app && flutter test
-        working_directory: ./Grupo_2/login-app
