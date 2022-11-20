@@ -6,4 +6,3 @@ Fernet
 discord-py-interactions
 coverage
 pytest
-re
