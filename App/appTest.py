@@ -10,4 +10,3 @@ def test_home_page():
         print('ROTA INICIAL FALHOU NO TESTE!')
 
 
-test_home_page()
