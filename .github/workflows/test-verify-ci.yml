@@ -20,5 +20,7 @@ jobs:
         python-version: '3.9'
         cache: 'pip'
     - run: pip install -r requirements.txt
-    - name: Run service
+      run: python3 App/verify/__init__.py
+    - name: Run Test Verify
       run: pytest App/verify/verify_tests.py
+
