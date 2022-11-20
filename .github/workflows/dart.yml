@@ -32,4 +32,4 @@ jobs:
           flutter-version: "3.3.8"
       - run: flutter clean
       - run: flutter pub get
-      - run: flutter test
+      - run: cd Grupo_2/login-app && flutter test
