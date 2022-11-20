@@ -26,23 +26,23 @@ class _LoginState extends State<Login> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
+        physics: BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.all(16),
           child: Padding(
             padding: const EdgeInsets.only(top: 80.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "Login app",
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 28),
                 ),
-                const Text(
+                Text(
                   "Faça login para acessar suas informações",
                   style: TextStyle(color: Colors.black, fontSize: 16),
                 ),
@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                     hintText: "CPF",
-                    prefixIcon: const Icon(
+                    prefixIcon: Icon(
                       Icons.person,
                       color: Colors.black,
                     ),
@@ -75,7 +75,7 @@ class _LoginState extends State<Login> {
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                     hintText: "Senha",
-                    prefixIcon: const Icon(
+                    prefixIcon: Icon(
                       Icons.lock,
                       color: Colors.black,
                     ),
@@ -84,7 +84,7 @@ class _LoginState extends State<Login> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.02,
                 ),
-                const Text(
+                Text(
                   "Não lembra da sua senha?",
                   style: TextStyle(color: Colors.blue, fontSize: 14),
                 ),
@@ -103,10 +103,10 @@ class _LoginState extends State<Login> {
                             Navigator.pushNamed(context, Profile.id);
                           }
                         },
-                        child: const Text("Login"),
+                        child: Text("Login"),
                         style: ElevatedButton.styleFrom(
                           primary: kBackgroundColor2,
-                          shape: const RoundedRectangleBorder(
+                          shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(
                               Radius.circular(1),
                             ),
