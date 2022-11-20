@@ -6,3 +6,4 @@ Fernet
 discord-py-interactions
 coverage
 pytest
+regex
