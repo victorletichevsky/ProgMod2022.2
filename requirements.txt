@@ -5,3 +5,4 @@ cryptography
 Fernet
 discord-py-interactions
 coverage
+pytest
