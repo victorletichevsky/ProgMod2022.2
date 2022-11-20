@@ -1,6 +1,6 @@
 import re
 
-__all__ = ["checkUsername", "removeCaret"]
+__all__ = ["checkUsername"]
 
 def checkUsername(regex, username):
   
@@ -26,7 +26,7 @@ def checkUsername(regex, username):
     return -4
   #string vazia
   if (len(username) == 0):
-    return False
+    return -5
   # username válido
   return 1
 
