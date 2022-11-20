@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:Grupo_2/login_app/main.dart';
+import 'package:login_app/main.dart';
 
 void main() {
   testWidgets('MyApp smoke test', (WidgetTester tester) async {
-    await tester.pumpWidget(Myapp());
+    await tester.pumpWidget(SizedBox(
+      height: 10,
+    ));
     // Add tests here!
     void test() {}
 
