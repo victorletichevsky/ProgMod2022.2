@@ -19,7 +19,7 @@ def createMessage(user, message, theme, docRef = messageRef):
             Is the text in the message
         theme : str
             Is the topic of the message
-    messageRef : Any, optional
+        docRef : Any, optional
            the document reference
     '''
     try:
@@ -41,7 +41,7 @@ def getMessages(filter = "Todos", docRef = messageRef):
     ----------
     filter : str, optional
            theme of the messages (default is "Todos")
-    messageRef : Any, optional
+    docRef : Any, optional
            the document reference
     Returns
     -------
@@ -70,7 +70,7 @@ def messageFilter(filter, docRef = messageRef):
     ----------
     filter : str
            theme of the messages
-    messageRef : Any, optional
+    docRef : Any, optional
            the document reference
     Returns
     -------
